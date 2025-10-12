@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* LearnCheck Design System - Dicoding Branding */
+    --background: 0 0% 98%;
+    --foreground: 210 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+
+    /* Dicoding Blue Primary */
+    --primary: 207 78% 46%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 207 78% 38%;
+
+    /* Cyan/Turquoise Accent (Dicoding style) */
+    --accent: 188 85% 53%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 188 85% 45%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 20% 15%;
+
+    --muted: 210 30% 94%;
+    --muted-foreground: 210 15% 50%;
+
+    /* Success Green for Correct Answers */
+    --success: 140 60% 50%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 140 50% 95%;
+
+    /* Error Red for Wrong Answers */
+    --error: 0 70% 60%;
+    --error-foreground: 0 0% 100%;
+    --error-light: 0 60% 96%;
+
+    /* Warning for info alerts */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 207 78% 46%;
+
+    --radius: 0.75rem;
+
+    /* Educational Platform Specific */
+    --progress-bg: 210 30% 92%;
+    --progress-fill: 207 78% 46%;
+    --option-hover: 207 78% 97%;
+    --option-selected: 207 78% 95%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 30% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 210 25% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 210 25% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 207 78% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 207 78% 48%;
+
+    --accent: 188 85% 53%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 188 85% 45%;
+
+    --secondary: 210 25% 18%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 210 25% 16%;
+    --muted-foreground: 210 15% 60%;
+
+    --success: 140 55% 55%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 140 40% 20%;
+
+    --error: 0 65% 65%;
+    --error-foreground: 0 0% 100%;
+    --error-light: 0 50% 20%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 210 25% 20%;
+    --input: 210 25% 20%;
+    --ring: 207 78% 55%;
+
+    --progress-bg: 210 25% 18%;
+    --progress-fill: 207 78% 55%;
+    --option-hover: 207 50% 18%;
+    --option-selected: 207 60% 22%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
