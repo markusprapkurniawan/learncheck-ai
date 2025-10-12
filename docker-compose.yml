@@ -1,0 +1,102 @@
+# LearnCheck - Docker Compose (FIXED ENV VARS)
+version: '3.8'
+
+services:
+  # Redis - Cache Store
+  redis:
+    image: redis:7-alpine
+    container_name: learncheck-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    networks:
+      - learncheck-network
+    restart: unless-stopped
+
+  # Mock Dicoding API
+  mock-dicoding:
+    build:
+      context: ./learncheck-ai/mock-dicoding
+      dockerfile: Dockerfile
+    container_name: learncheck-mock-dicoding
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./mock-materi:/usr/src/app/mock-materi:ro
+    environment:
+      NODE_ENV: development
+      PORT: "3002"
+    depends_on:
+      - redis
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3002/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - learncheck-network
+    restart: unless-stopped
+
+  # Backend API - EXPLICIT ENV VARS (NO .env file)
+  backend:
+    build:
+      context: ./learncheck-ai/backend
+      dockerfile: Dockerfile
+    container_name: learncheck-backend
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: development
+      PORT: "3001"
+      GEMINI_API_KEY: "${GEMINI_API_KEY}"
+      MOCK_DICODING_API_URL: "http://mock-dicoding:3002"
+      REDIS_URL: "redis://redis:6379"
+      CORS_ORIGIN: "http://localhost:5000,http://localhost:8080,http://localhost:8081,http://localhost:8082"
+    depends_on:
+      - redis
+      - mock-dicoding
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3001/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - learncheck-network
+    restart: unless-stopped
+
+  # Frontend - React App with Nginx
+  frontend:
+    build:
+      context: ./learncheck-ai/frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:3001
+    container_name: learncheck-frontend
+    ports:
+      - "5000:80"
+    depends_on:
+      - backend
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost/health || exit 1"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    networks:
+      - learncheck-network
+    restart: unless-stopped
+
+networks:
+  learncheck-network:
+    driver: bridge
+
+volumes:
+  redis-data:
