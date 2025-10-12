@@ -1,4 +1,4 @@
-# 🎓 LearnCheck - Formative Assessment Powered with AI
+# LearnCheck - Formative Assessment Powered with AI
 
 LearnCheck adalah sistem penilaian formatif berbasis AI yang terintegrasi dengan platform Dicoding. Sistem ini menggunakan Google Gemini AI untuk menghasilkan soal kuis secara otomatis berdasarkan materi pembelajaran, dengan tingkat kesulitan yang adaptif terhadap performa user.
 
@@ -10,59 +10,59 @@ LearnCheck adalah sistem penilaian formatif berbasis AI yang terintegrasi dengan
 
 ---
 
-## 📋 Daftar Isi
+## Daftar Isi
 
-- [Fitur Utama](#-fitur-utama)
-- [Arsitektur Sistem](#-arsitektur-sistem)
-- [Tech Stack](#-tech-stack)
-- [Prerequisites](#-prerequisites)
-- [Quick Start](#-quick-start)
-- [Konfigurasi](#-konfigurasi)
-- [API Documentation](#-api-documentation)
-- [Development Guide](#-development-guide)
-- [Deployment](#-deployment)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [Fitur Utama](#fitur-utama)
+- [Arsitektur Sistem](#arsitektur-sistem)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Quick Start](#quick-start)
+- [Konfigurasi](#konfigurasi)
+- [API Documentation](#api-documentation)
+- [Development Guide](#development-guide)
+- [Deployment](#deployment)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
-### 🤖 AI-Powered Question Generation
+### AI-Powered Question Generation
 - Soal quiz otomatis dibuat oleh Google Gemini AI
 - Disesuaikan dengan konten materi pembelajaran
 - Penjelasan lengkap untuk setiap jawaban
 
-### 📊 Adaptive Difficulty
+### Adaptive Difficulty
 - Tingkat kesulitan menyesuaikan performa user
 - 3 level: Easy, Medium, Hard
 - Algoritma adaptif berdasarkan score sebelumnya
 
-### 📱 User-Friendly Interface
+### User-Friendly Interface
 - UI minimalis mengikuti design Dicoding
 - Progress indicator dengan nomor soal clickable
 - Timer countdown dengan warning
 - Riwayat attempt dengan detail lengkap
 
-### 🔄 Real-time Feedback
+### Real-time Feedback
 - Hasil quiz langsung tampil setelah submit
 - Result card dengan penjelasan untuk setiap soal
 - Status lulus/tidak lulus (passing score: 80%)
 
-### 💾 Auto-Save & History
+### Auto-Save & History
 - Auto-save jawaban ke localStorage
 - Riwayat attempt tersimpan lengkap
 - Detail riwayat bisa di-review kapan saja
 
-### 🌐 iFrame Integration
+### iFrame Integration
 - Designed untuk di-embed di Dicoding Classroom
 - URL parameters: `tutorial_id` & `user_id`
 - No CORS issues dengan proper configuration
 
 ---
 
-## 🏗️ Arsitektur Sistem
+## Arsitektur Sistem
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -104,7 +104,7 @@ LearnCheck adalah sistem penilaian formatif berbasis AI yang terintegrasi dengan
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 18** - UI library
@@ -135,7 +135,7 @@ LearnCheck adalah sistem penilaian formatif berbasis AI yang terintegrasi dengan
 
 ---
 
-## 📦 Prerequisites
+## Prerequisites
 
 Sebelum menjalankan project, pastikan sudah install:
 
@@ -147,7 +147,7 @@ Sebelum menjalankan project, pastikan sudah install:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone Repository
 
@@ -213,7 +213,7 @@ Parameter URL:
 
 ---
 
-## ⚙️ Konfigurasi
+## Konfigurasi
 
 ### Frontend Configuration
 
@@ -305,7 +305,7 @@ services:
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
 ### Backend Endpoints
 
@@ -401,7 +401,7 @@ GET /api/users/:userId/preferences
 
 ---
 
-## 👨‍💻 Development Guide
+## Development Guide
 
 ### Run Development Mode (tanpa Docker)
 
@@ -538,7 +538,7 @@ npm run test
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
 ### Production Build
 
@@ -584,7 +584,7 @@ RATE_LIMIT_MAX_REQUESTS=100
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -642,7 +642,7 @@ VITE_DEBUG=true npm run dev
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Kami welcome contributions! Berikut guidelines-nya:
 
@@ -663,23 +663,23 @@ Kami welcome contributions! Berikut guidelines-nya:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👥 Team
+## Team
 
-**Capstone Project Team - Dicoding Indonesia**
+**Developed by Markus Prap Kurniawan**
 
-- **Developer**: [Your Name]
-- **Mentor**: Mas Ben (AI Pair Programming Partner)
-- **Organization**: Dicoding Indonesia
+- Full-stack Developer
+- Dicoding Indonesia - Capstone Project
+- GitHub: [@markusprap](https://github.com/markusprap)
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Google Gemini AI](https://ai.google.dev/) for powerful language model
 - [Dicoding Indonesia](https://www.dicoding.com/) for learning platform
@@ -688,15 +688,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Support
+## Support
 
 Jika ada pertanyaan atau issue:
 
-1. Check [Troubleshooting](#-troubleshooting) section
+1. Check [Troubleshooting](#troubleshooting) section
 2. Open issue di GitHub
-3. Contact team via Dicoding forum
+3. Contact via email atau Dicoding forum
 
 ---
 
-**Made with ❤️ for Dicoding Learners**
+**Made with dedication for Dicoding Learners**
 
